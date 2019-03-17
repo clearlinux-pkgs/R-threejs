@@ -4,7 +4,7 @@
 #
 Name     : R-threejs
 Version  : 0.3.1
-Release  : 14
+Release  : 15
 URL      : https://cran.r-project.org/src/contrib/threejs_0.3.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/threejs_0.3.1.tar.gz
 Summary  : Interactive 3D Scatter Plots, Networks and Globes
@@ -14,11 +14,15 @@ Requires: R-base64enc
 Requires: R-crosstalk
 Requires: R-htmlwidgets
 Requires: R-igraph
+Requires: R-jsonlite
+Requires: R-pkgconfig
 BuildRequires : R-base64enc
 BuildRequires : R-crosstalk
 BuildRequires : R-htmlwidgets
 BuildRequires : R-igraph
-BuildRequires : clr-R-helpers
+BuildRequires : R-jsonlite
+BuildRequires : R-pkgconfig
+BuildRequires : buildreq-R
 
 %description
 # Three.js and R
@@ -35,11 +39,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1521234322
+export SOURCE_DATE_EPOCH=1552844913
 
 %install
+export SOURCE_DATE_EPOCH=1552844913
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1521234322
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -74,8 +78,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library threejs|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  threejs || :
 
 
 %files
@@ -130,3 +133,4 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/threejs/images/moon.jpg
 /usr/lib64/R/library/threejs/images/plus.png
 /usr/lib64/R/library/threejs/images/world.jpg
+/usr/lib64/R/library/threejs/tests/threejs.R
