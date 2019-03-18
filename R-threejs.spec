@@ -4,18 +4,24 @@
 #
 Name     : R-threejs
 Version  : 0.3.1
-Release  : 17
+Release  : 18
 URL      : https://cran.r-project.org/src/contrib/threejs_0.3.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/threejs_0.3.1.tar.gz
 Summary  : Interactive 3D Scatter Plots, Networks and Globes
 Group    : Development/Tools
 License  : MIT
+Requires: R-httpuv
+Requires: R-xtable
+Requires: R-yaml
 BuildRequires : R-base64enc
 BuildRequires : R-crosstalk
 BuildRequires : R-htmlwidgets
+BuildRequires : R-httpuv
 BuildRequires : R-igraph
 BuildRequires : R-jsonlite
 BuildRequires : R-pkgconfig
+BuildRequires : R-xtable
+BuildRequires : R-yaml
 BuildRequires : buildreq-R
 
 %description
@@ -33,10 +39,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552859141
+export SOURCE_DATE_EPOCH=1552927642
 
 %install
-export SOURCE_DATE_EPOCH=1552859141
+export SOURCE_DATE_EPOCH=1552927642
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "

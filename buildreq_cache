@@ -2,6 +2,9 @@
 R-base64enc
 R-crosstalk
 R-htmlwidgets
+R-httpuv
 R-igraph
 R-jsonlite
 R-pkgconfig
+R-xtable
+R-yaml
