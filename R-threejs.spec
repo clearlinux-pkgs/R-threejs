@@ -4,7 +4,7 @@
 #
 Name     : R-threejs
 Version  : 0.3.3
-Release  : 26
+Release  : 27
 URL      : https://cran.r-project.org/src/contrib/threejs_0.3.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/threejs_0.3.3.tar.gz
 Summary  : Interactive 3D Scatter Plots, Networks and Globes
@@ -29,21 +29,22 @@ Three.js widgets for R and shiny. The package includes
 
 %prep
 %setup -q -c -n threejs
+cd %{_builddir}/threejs
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1579656579
+export SOURCE_DATE_EPOCH=1589770528
 
 %install
-export SOURCE_DATE_EPOCH=1579656579
+export SOURCE_DATE_EPOCH=1589770528
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
