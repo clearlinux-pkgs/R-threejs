@@ -1,5 +1,5 @@
 PKG_NAME := R-threejs
-URL = https://cran.r-project.org/src/contrib/threejs_0.3.3.tar.gz
+URL = https://ftp.osuosl.org/pub/cran/src/contrib/threejs_0.3.4.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
